@@ -1,1 +1,5 @@
-# Intermediate-HTML-CSS
+# Intermediate HTML and CSS
+
+Learning:
+
+- Emmet
