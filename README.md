@@ -3,3 +3,4 @@
 Learning:
 
 - Emmet
+- Tables
