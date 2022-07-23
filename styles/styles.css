@@ -1,35 +1,20 @@
-html {
-  font-family: sans-serif;
+/* Selecting every single div with a descendant combinator
+
+main div {
+
+} */
+
+
+
+/* Child combinator in effect
+
+main > div {
+    Select all child 'class' of div within main
 }
 
-table {
-  border-collapse: collapse;
-  border: 2px solid rgb(200,200,200);
-  letter-spacing: 1px;
-  font-size: 0.8rem;
-}
+main > div > div {
+    Basically selecting the grand-children of main
+    or all the children of main's children with a 'class' of div
+} */
 
-td, th {
-  border: 1px solid rgb(190,190,190);
-  padding: 10px 20px;
-}
 
-th {
-  background-color: rgb(235,235,235);
-}
-
-td {
-  text-align: center;
-}
-
-tr:nth-child(even) td {
-  background-color: rgb(250,250,250);
-}
-
-tr:nth-child(odd) td {
-  background-color: rgb(245,245,245);
-}
-
-caption {
-  padding: 10px;
-}

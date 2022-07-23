@@ -4,3 +4,4 @@ Learning:
 
 - Emmet
 - Tables
+- Advanced CSS Selectors
