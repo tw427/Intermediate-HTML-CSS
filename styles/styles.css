@@ -1,20 +1,39 @@
-/* Selecting every single div with a descendant combinator
+/* Legend
+
+> - the child combinator
++ - the adjacent sibling combinator
+~ - the general sibling combinator */
+
+/* Selecting every single div with a descendant combinator */
 
 main div {
 
-} */
+}
 
-
-
-/* Child combinator in effect
+/* Child combinator in effect ( > ) */
 
 main > div {
-    Select all child 'class' of div within main
+  /* Select all child 'class' of div within main */
 }
 
 main > div > div {
-    Basically selecting the grand-children of main
-    or all the children of main's children with a 'class' of div
-} */
+  /* Basically selecting the grand-children of main
+  or all the children of main's children with a 'class' of div */
+}
 
+/* Adjacent selector ( + ) will select neighbors of the element we target */
 
+.group1 + div {
+  /* Selects group1 by class name and any adjacent element or adjacent sibling, so group2 */
+}
+
+.group + div + div {
+  /* Here we move or skip a neighbor and jump from group2 over to group3 starting from group1
+  group3 is an adjacent of group1's adjacent which is what we were looking for */
+}
+
+/* General sibling combinator ( ~ ) */
+
+.group1 ~ div {
+  /* Selects all siblings / neighbors of class name div group1 */
+}
