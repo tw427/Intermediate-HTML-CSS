@@ -2,24 +2,29 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Table template</title>
+    <title>Intermediate / Advanced HTML and CSS</title>
     <link href="styles/styles.css" rel="stylesheet" type="text/css">
   </head>
   <body>
+    <p>This is my test page</p>
 
-    <main class="parent">
-      <div class="child group1">
-        <div class="grand-child group1"></div>
-      </div>
+    <form action="/my-handling-form-page" method="post">
+      <ul>
+        <li>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="user_name">
+        </li>
+        <li>
+          <label for="mail">E-mail:</label>
+          <input type="email" id="mail" name="user_email">
+        </li>
+        <li>
+          <label for="msg">Message:</label>
+          <textarea type="text" id="msg" name="user_message"></textarea>
+        </li>
+      </ul>
 
-      <div class="child group2">
-        <div class="grand-child group2"></div>
-      </div>
-      
-      <div class="child group3">
-        <div class="grand-child group3"></div>
-      </div>
-    </main>
+    </form>
 
   </body>
 </html>
