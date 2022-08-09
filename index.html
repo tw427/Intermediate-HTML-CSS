@@ -1,97 +1,144 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <title>Intermediate / Advanced HTML and CSS</title>
-    <link href="styles/styles.css" rel="stylesheet" type="text/css">
+    <meta charset="utf-8"/>
+    <title>Advanced styling: Task 3</title>
+    <style>
+      body {
+        background-color: #fff;
+        color: #333;
+        font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
+        padding: 1em;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+        appearance: none;
+      }
+
+      button,
+      input,
+      select {
+        font-family: inherit;
+        font-size: 100%;
+        padding: 0; margin: 0;
+      }
+
+      fieldset {
+        padding: 10px 30px 0;
+        width: 400px;
+      }
+
+      legend {
+        color: white;
+        background: black;
+        padding: 5px 10px;
+      }
+
+      fieldset > div {
+        margin-bottom: 20px;
+        display: flex;
+        flex-flow: row wrap;
+      }
+
+      button, label, input {
+        display: block;
+        font-family: inherit;
+        font-size: 100%;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 5px;
+        height: 30px;
+      }
+
+      input {
+        box-shadow: inset 1px 1px 3px #ccc;
+        border-radius: 5px;
+      }
+
+      input:hover, input:focus {
+        background-color: #eee;
+      }
+
+      input:required {
+        border: 2px solid black;
+      }
+
+      input:optional {
+        border: 1px solid grey;
+      }
+
+      input + span {
+        position: relative;
+      }
+
+      input:required + span::after {
+        position: absolute;
+        content: "required *";
+        color: white;
+        background-color: black;
+        padding: 5px 10px;
+        font-size: 0.7em;
+        top: -33px;
+        left: -70px;
+      }
+
+      input + span::before {
+        position: absolute;
+        right: -22px;
+      }
+
+      input:valid + span::before {
+        content: '✓';
+        font-size: 1.4em;
+        color: green;
+      }
+
+      input:invalid {
+        border: 2px solid red;
+      }
+
+      input:invalid + span::before {
+        content: '✖';
+        font-size: 1.3em;
+        color: red;
+      }
+
+
+      button {
+        width: 60%;
+        margin: 0 auto;
+      }
+    </style>
   </head>
+
   <body>
     <form>
-      <h1>Payment form</h1>
-      <p>Required fields are marked with a <strong><span aria-label="required">*</span></strong>.</p>
+      <fieldset>
+        <legend>Feedback form</legend>
 
-      <section>
-        <h2>Contact information</h2>
-        <fieldset>
-          <legend>Title</legend>
-
-          <ul>
-            <li>
-              <label for="title_1">
-                <input type="radio" id="title_1" name="title" value="K">
-                King
-              </label>
-            </li>
-            <li>
-              <label for="title_2">
-                <input type="radio" id="title_2" name="title" value="Q">
-                Queen
-              </label>
-            </li>
-            <li>
-              <label for="title_3">
-                <input type="radio" name="title" id="title_3" value="J">
-                Joker
-              </label>
-            </li>
-          </ul>
-        </fieldset>
-        <p>
-          <label for="name">
-            <span>Name: </span>
-            <strong><span aria-label="required">*</span></strong>
-          </label>
-          <input type="text" id="name" name="username">
-        </p>
-        <p>
-          <label for="mail">
-            <span>Email: </span>
-            <strong><span aria-label="required">*</span></strong>
-          </label>
-          <input type="text" id="mail" name="usermail">
-        </p>
-        <p>
-          <label for="pwd">
-            <span>Password: </span>
-            <strong><span aria-label="required">*</span></strong>
-          </label>
-          <input type="password" name="password" id="pwd">
-        </p>
-      </section>
-
-      <section>
-        <h2>Payment information</h2>
-        <p>
-          <label for="card">
-            <span>Card type: </span>
-          </label>
-          <select name="card" id="usercard">
-            <option value="visa">Visa</option>
-            <option value="mc">Mastercard</option>
-            <option value="amex">American Express</option>
-          </select>
-        </p>
-        <p>
-          <label for="number">
-            <span>Card number: </span>
-            <strong><span aria-label="required">*</span></strong>
-          </label>
-          <input type="tel" id="number" name="cardnumber">
-        </p>
-        <p>
-          <label for="expiration">
-            <span>Expiration: </span>
-            <strong><span aria-label="required">*</span></strong>
-          </label>
-          <input type="text" id="expiration" required="true" placeholder="MM/YY" pattern="^(0[1-9]|1[0-2])\/([0-9]{2})$">
-        </p>
-      </section>
-      <section>
-        <p>
-          <button type="submit">Validate the payment</button>
-        </p>
-      </section>
+        <p>Required fields are labelled with "required".</p>
+        <div>
+          <label for="fname">First name: </label>
+          <input id="fname" name="fname" type="text" required>
+          <span></span>
+        </div>
+        <div>
+          <label for="lname">Last name: </label>
+          <input id="lname" name="lname" type="text" required>
+          <span></span>
+        </div>
+        <div>
+          <label for="email">Email address: </label>
+          <input id="email" name="email" type="email">
+          <span></span>
+        </div>
+        <div><button>Submit</button></div>
+      </fieldset>
     </form>
-
   </body>
+
 </html>
