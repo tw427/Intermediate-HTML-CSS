@@ -1,144 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
   <head>
-    <meta charset="utf-8"/>
-    <title>Advanced styling: Task 3</title>
-    <style>
-      body {
-        background-color: #fff;
-        color: #333;
-        font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
-        padding: 1em;
-        margin: 0;
-      }
-
-      * {
-        box-sizing: border-box;
-        appearance: none;
-      }
-
-      button,
-      input,
-      select {
-        font-family: inherit;
-        font-size: 100%;
-        padding: 0; margin: 0;
-      }
-
-      fieldset {
-        padding: 10px 30px 0;
-        width: 400px;
-      }
-
-      legend {
-        color: white;
-        background: black;
-        padding: 5px 10px;
-      }
-
-      fieldset > div {
-        margin-bottom: 20px;
-        display: flex;
-        flex-flow: row wrap;
-      }
-
-      button, label, input {
-        display: block;
-        font-family: inherit;
-        font-size: 100%;
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-        width: 100%;
-        padding: 5px;
-        height: 30px;
-      }
-
-      input {
-        box-shadow: inset 1px 1px 3px #ccc;
-        border-radius: 5px;
-      }
-
-      input:hover, input:focus {
-        background-color: #eee;
-      }
-
-      input:required {
-        border: 2px solid black;
-      }
-
-      input:optional {
-        border: 1px solid grey;
-      }
-
-      input + span {
-        position: relative;
-      }
-
-      input:required + span::after {
-        position: absolute;
-        content: "required *";
-        color: white;
-        background-color: black;
-        padding: 5px 10px;
-        font-size: 0.7em;
-        top: -33px;
-        left: -70px;
-      }
-
-      input + span::before {
-        position: absolute;
-        right: -22px;
-      }
-
-      input:valid + span::before {
-        content: '✓';
-        font-size: 1.4em;
-        color: green;
-      }
-
-      input:invalid {
-        border: 2px solid red;
-      }
-
-      input:invalid + span::before {
-        content: '✖';
-        font-size: 1.3em;
-        color: red;
-      }
-
-
-      button {
-        width: 60%;
-        margin: 0 auto;
-      }
-    </style>
+    <meta charset='UTF-8'/>
+    <title>Speaker Submission</title>
+    <link rel='stylesheet' href='styles/styles.css'/>
   </head>
-
   <body>
-    <form>
-      <fieldset>
-        <legend>Feedback form</legend>
+    <header class='speaker-form-header'>
+      <h1>Speaker Submission</h1>
+      <p><em>Want to speak at our fake conference? Fill out
+        this form.</em></p>
 
-        <p>Required fields are labelled with "required".</p>
-        <div>
-          <label for="fname">First name: </label>
-          <input id="fname" name="fname" type="text" required>
-          <span></span>
+      <form action="" method="get" class="speaker-form">
+        <div class="form-row">
+          <label for="full-name">Name: </label>
+          <input type="text" id="full-name" name="full-name">
         </div>
-        <div>
-          <label for="lname">Last name: </label>
-          <input id="lname" name="lname" type="text" required>
-          <span></span>
+
+        <div class="form-row">
+          <label for="email">Email: </label>
+          <input type="email" name="email" id="email" placeholder="joe@gmail.com">
         </div>
-        <div>
-          <label for="email">Email address: </label>
-          <input id="email" name="email" type="email">
-          <span></span>
-        </div>
-        <div><button>Submit</button></div>
-      </fieldset>
-    </form>
+
+        <fieldset class="legacy-form-row">
+          <legend>Type of Talk</legend>
+          <input type="radio" 
+                 name="talk-type" 
+                 id="talk-type-1" 
+                 value="main-stage">
+          <label for="talk-type-1" class="radio-label">Main Stage</label>
+          <input type="radio" 
+                 name="talk-type" 
+                 id="talk-type-2" 
+                 value="workshop"
+                 checked>
+          <label for="talk-type-2">Workshop</label>
+        </fieldset>
+      </form>
+    </header>
   </body>
-
 </html>

@@ -1,104 +1,97 @@
-h1 {
-  margin-top: 0;
+@media only screen and (min-width: 700px) {
+  .speaker-form-header,
+  .speaker-form {
+    width: 600px;
+  }
+  .form-row {
+    flex-direction: row;
+    align-items: flex-start; /* To avoid stretching */
+    margin-bottom: 20px;
+  }
+  .form-row input[type="text"],
+  .form-row input[type="email"],
+  .form-row select,
+  .form-row textarea {
+    width: 250px;
+    height: initial;
+  }
+  .form-row label {
+    text-align: right;
+    width: 120px;
+    margin-top: 7px;
+    padding-right: 20px;
+  }
 }
 
-ul {
+* {
   margin: 0;
   padding: 0;
-  list-style: none;
-}
-
-form {
-  margin: 0 auto;
-  width: 400px;
-  padding: 1em;
-  border: 1px solid #CCC;
-  border-radius: 1em;
-}
-
-div+div {
-  margin-top: 1em;
-}
-
-label span {
-  display: inline-block;
-  width: 120px;
-  text-align: right;
-}
-
-input, textarea {
-  font: 1em sans-serif;
-  width: 250px;
   box-sizing: border-box;
-  border: 1px solid #999;
 }
 
-input[type=checkbox], input[type=radio] {
-  width: auto;
-  border: none;
+body {
+  color: #5D6063;
+  background-color: #EAEDF0;
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 1.3;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-input:focus, textarea:focus {
-  border-color: #000;
+.speaker-form-header {
+  text-align: center;
+  background-color: #F6F7F8;
+  border: 1px solid #D6D9DC;
+  border-radius: 3px;
+  
+  width: 80%;
+  margin: 40px 0;
+  padding: 50px;
 }
 
-textarea {
-  vertical-align: top;
-  height: 5em;
-  resize: vertical;
+.speaker-form-header h1 {
+  font-size: 30px;
+  margin-bottom: 20px;
 }
 
-fieldset {
-  width: 250px;
-  box-sizing: border-box;
-  margin-left: 136px;
-  border: 1px solid #999;
+.speaker-form {
+  background-color: #F6F7F8;
+  border: 1px solid #D6D9DC;
+  border-radius: 3px;
+
+  width: 80%;
+  padding: 50px;
+  margin: 0 0 40px 0;
 }
 
-button {
-  margin: 20px 0 0 124px;
+.form-row {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
-label {
-position: relative;
+.form-row input[type="text"],
+.form-row input[type="email"] {
+  background-color: #FFFFFF;
+  border: 1px solid #D6D9DC;
+  border-radius: 3px;
+  width: 100%;
+  padding: 7px;
+  font-size: 14px;
 }
 
-/* Legend
-
-> - the child combinator
-+ - the adjacent sibling combinator
-~ - the general sibling combinator */
-
-/* Selecting every single div with a descendant combinator */
-
-/* main div {
-
-} */
-
-/* Child combinator in effect ( > ) */
-
-/* main > div {
-  Select all child 'class' of div within main
+.form-row input[type="text"]:invalid,
+.form-row input[type="email"]:invalid {
+  border: 1px solid #D55C5F;
+  color: #D55C5F;
+  box-shadow: none;
 }
 
-main > div > div {
-  Basically selecting the grand-children of main
-  or all the children of main's children with a 'class' of div
+.form-row label {
+  margin-bottom: 15px;
 }
-
-Adjacent selector ( + ) will select neighbors of the element we target
-
-.group1 + div {
-  Selects group1 by class name and any adjacent element or adjacent sibling, so group2
-}
-
-.group + div + div {
-  Here we move or skip a neighbor and jump from group2 over to group3 starting from group1
-  group3 is an adjacent of group1's adjacent which is what we were looking for
-}
-
-General sibling combinator ( ~ )
-
-.group1 ~ div {
-  Selects all siblings / neighbors of class name div group1
-} */
