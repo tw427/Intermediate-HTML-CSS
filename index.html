@@ -38,11 +38,23 @@
       <ul>
         <li>
           <label for="uname">User name:</label>
-          <input type="text" name="uname" id="uname" pattern="[a-z][\.][a-z|0-9]{3,}" required minlength="4" maxlength="20">
+          <input 
+              type="text" 
+              name="uname" id="uname" 
+              required 
+              minlength="4" 
+              axlength="20" 
+              pattern="[a-z][\.][a-z0-9]{3,}"
+              title="Please enter any lower case single letter followed by a period and at least 3 lower case characters or numbers"> 
         </li>
         <li>
           <label for="email">Email address:</label>
-          <input type="email" name="email" id="email" required>
+          <input 
+              type="email" 
+              name="email" 
+              id="email" 
+              pattern=[\w-\.]+@bigcorp\.eu
+              required>
         </li>
         <li>
           <label for="phone">Phone number:</label>
