@@ -1,31 +1,62 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Favorite fruit start</title>
+    <meta charset="utf-8"/>
+    <title>Form validation: Task 1</title>
     <style>
-      input:invalid {
-        border: 2px dashed red;
+      body {
+        background-color: #fff;
+        color: #333;
+        font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
+        padding: 1em;
+        margin: 0;
       }
 
-      input:invalid:required {
-        background-image: linear-gradient(to right, pink, lightgreen);
+      * {
+        box-sizing: border-box;
       }
 
       input:valid {
         border: 2px solid black;
       }
+
+      input:invalid {
+        border: 2px solid crimson;
+      }
+
+      textarea {
+        resize: none;
+        min-width: 250px;
+        height: 100px;
+      }
     </style>
   </head>
 
-<body>
+  <body>
     <form>
-      <label for="choose">Would you prefer a banana or a cherry?</label>
-      <input id="choose" name="i_like" required
-      pattern="[Bb]anana|[Cc]herry">
-      <button>Submit</button>
+      <h2>Enter your support query</h2>
+      <ul>
+        <li>
+          <label for="uname">User name:</label>
+          <input type="text" name="uname" id="uname" required minlength="5" maxlength="20">
+        </li>
+        <li>
+          <label for="email">Email address:</label>
+          <input type="email" name="email" id="email" required>
+        </li>
+        <li>
+          <label for="phone">Phone number:</label>
+          <input type="tel" name="phone" id="phone" required maxlength="15">
+        </li>
+        <li>
+          <label for="comment">Comment:</label>
+          <textarea name="comment" id="comment" maxlength="200"></textarea>
+        </li>
+        <li>
+          <button>Submit comment</button>
+        </li>
+      </ul>
     </form>
-</body>
+  </body>
 
 </html>
