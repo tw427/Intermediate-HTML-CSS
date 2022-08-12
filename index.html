@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Form validation: Task 1</title>
+    <title>Form validation: Task 3</title>
     <style>
       body {
         background-color: #fff;
@@ -24,57 +24,40 @@
         border: 2px solid crimson;
       }
 
-      textarea {
-        resize: none;
-        min-width: 250px;
-        height: 100px;
-      }
     </style>
   </head>
 
   <body>
     <form>
-      <h2>Enter your support query</h2>
-      <ul>
-        <li>
-          <label for="uname">User name:</label>
-          <input 
-              type="text" 
-              name="uname" id="uname" 
-              required 
-              minlength="4" 
-              axlength="20" 
-              pattern="[a-z][\.][a-z0-9]{3,}"
-              title="Please enter any lower case single letter followed by a period and at least 3 lower case characters or numbers"> 
-        </li>
-        <li>
-          <label for="email">Email address:</label>
-          <input 
-              type="email" 
-              name="email" 
-              id="email" 
-              pattern="[\w.-]+@bigcorp\.eu"
-              required>
-        </li>
-        <li>
-          <label for="phone">Phone number:</label>
-          <input 
-              type="tel" 
-              name="phone" 
-              id="phone" 
-              required 
-              minlength="10"
-              pattern="(\d{10}|\d{3}[-\s\.]\d{3}[-\s\.]\d{4})">
-        </li>
-        <li>
-          <label for="comment">Comment:</label>
-          <textarea name="comment" id="comment" maxlength="200"></textarea>
-        </li>
-        <li>
-          <button>Submit comment</button>
-        </li>
-      </ul>
+      <label for="mail">I would like you to provide me with an e-mail address:</label>
+      <input 
+          type="email" 
+          id="mail" 
+          name="mail" 
+          minlength="10"
+          required
+          pattern="[\w\.-]+@[\w\.-]+\.[\w]{2, 3}">
+      <button class="submit">Submit</button>
     </form>
   </body>
+  <script>
+    const email = document.getElementById("mail");
+
+    email.addEventListener('input', () => {
+      email.setCustomValidity('');
+      email.checkValidity();
+    });
+
+    email.addEventListener('invalid', () => {
+      let value = email.value;
+      if(value === '') {
+        email.setCustomValidity('Please enter your email!');
+      } else if(value.length < 10) {
+        email.setCustomValidity('Emails must contain a minimum length of 10 characters')
+      } else {
+        email.setCustomValidity('Please enter a valid Email address format.');
+      }
+    });
+  </script>
 
 </html>
