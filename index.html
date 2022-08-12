@@ -53,12 +53,18 @@
               type="email" 
               name="email" 
               id="email" 
-              pattern=[\w-\.]+@bigcorp\.eu
+              pattern="[\w.-]+@bigcorp\.eu"
               required>
         </li>
         <li>
           <label for="phone">Phone number:</label>
-          <input type="tel" name="phone" id="phone" required maxlength="15">
+          <input 
+              type="tel" 
+              name="phone" 
+              id="phone" 
+              required 
+              minlength="10"
+              pattern="(\d{10}|\d{3}[-\s\.]\d{3}[-\s\.]\d{4})">
         </li>
         <li>
           <label for="comment">Comment:</label>
